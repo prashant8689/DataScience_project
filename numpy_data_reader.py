@@ -1,12 +1,18 @@
 # import packages
 import numpy as np
+import os
+
 
 np.set_printoptions(threshold=np.nan)
 
 
 def read_csv():
     # Using absolute path of file
-    data_path = "C:\\Users\\sprashant\\Desktop\\CSVDataForAssignment.csv"
+    # os.path.dirname take the absolute path of any file and returns its directory path
+    # os.path.realpath return the canonical path of the specified filename
+    # __file__ gives the name of current file.
+    dir_path = dir_path = os.path.dirname(os.path.realpath(__file__))
+    data_path = dir_path + "\\CSVDataForAssignment.csv"
 
     # np.loadtxt : Load data from a text file.
     # Parameters used:
@@ -20,12 +26,7 @@ def read_csv():
     my_data = np.loadtxt(data_path, delimiter=",", dtype=object)  #, skiprows=1) #, usecols=[0, 1, 2])
     header = my_data[0] # Saving first row as header.
     # print my_data
-    # print np.transpose(my_data)
     # print(my_data.shape)
-    # print(my_data[:3])
-    # return header, my_data[:10]
+    # return header, my_data[1:10]
     return header, my_data[1:]  # Skipping first row as its is header
 
-
-def test():
-    read_csv()

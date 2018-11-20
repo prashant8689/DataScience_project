@@ -5,7 +5,7 @@ from matplotlib_plot_data import *
 
 def main():
     header, data = read_csv()
-    # plot_data(header, data)
+    plot_data(header, data)
     plot_histogram(data)
 
 

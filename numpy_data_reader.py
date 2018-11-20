@@ -3,9 +3,6 @@ import numpy as np
 import os
 
 
-np.set_printoptions(threshold=np.nan)
-
-
 def read_csv():
     # Using absolute path of file
     # os.path.dirname take the absolute path of any file and returns its directory path
@@ -23,10 +20,14 @@ def read_csv():
     #   usecols : [usecols : int or sequence, optional] Which columns to read, with 0 being the first.
     # Result:
     #   my_data : Content of file in form of N x N matrix.
-    my_data = np.loadtxt(data_path, delimiter=",", dtype=object)  #, skiprows=1) #, usecols=[0, 1, 2])
-    header = my_data[0] # Saving first row as header.
+    my_data = np.loadtxt(data_path, delimiter=",", dtype=object)
+	
+	# Saving first row as header.
+    header = my_data[0] 
+	
     # print my_data
     # print(my_data.shape)
     # return header, my_data[1:10]
-    return header, my_data[1:]  # Skipping first row as its is header
+	# Skipping first row as its is header
+    return header, my_data[1:]  
 

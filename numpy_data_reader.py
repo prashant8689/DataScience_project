@@ -21,13 +21,13 @@ def read_csv():
     # Result:
     #   my_data : Content of file in form of N x N matrix.
     my_data = np.loadtxt(data_path, delimiter=",", dtype=object)
-	
-	# Saving first row as header.
+
+    # Saving first row as header.
     header = my_data[0] 
-	
+
     # print my_data
     # print(my_data.shape)
     # return header, my_data[1:10]
-	# Skipping first row as its is header
-    return header, my_data[1:]  
+    # Skipping first row as its is header
+    return header, my_data[1:]
 
